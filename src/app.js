@@ -7,6 +7,7 @@ import userRoutes from "./routes/user.routes.js"; //Import user related routes
 import paymentsRoutes from "./routes/payments.routes.js"; //Import payments related routes
 import { errorHandler } from "./middlewares/error.middleware.js"; // Imports the error-handling middleware
 import CookieParser from "cookie-parser";
+import cors from "cors";
 
 const app = express(); // Creates an Express application
 

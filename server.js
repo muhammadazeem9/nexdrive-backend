@@ -1,9 +1,9 @@
-import dotenv from "dotenv"; // Loads environment variables
-import app from "./src/app.js"; // start app server
-import connectDB from "./src/config/database.js";
-import cors from "cors";
+import dotenv from "dotenv";
 
 dotenv.config();
+
+const { default: app } = await import("./src/app.js");
+const { default: connectDB } = await import("./src/config/database.js");
 
 await connectDB();
 
