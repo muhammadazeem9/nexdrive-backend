@@ -10,6 +10,18 @@ import CookieParser from "cookie-parser";
 
 const app = express(); // Creates an Express application
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://nex-drive-react-app-git-dev-nexdrive-m-azeem.vercel.app",
+];
+
+app.use(
+  cors({
+    origin: allowedOrigins,
+    credentials: true,
+  }),
+);
+
 app.use(express.json()); // Middleware to parse incoming JSON data
 app.use(CookieParser());
 
