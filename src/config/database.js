@@ -9,6 +9,7 @@ const connectDB = async () => {
     console.log("server connected successfully");
   } catch (error) {
     console.error("connection failed:", error.message);
+    throw error;
   }
 };
 
