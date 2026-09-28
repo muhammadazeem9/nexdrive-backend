@@ -13,19 +13,10 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: allowedOrigins,
+    credentials: true,
   }),
 );
-const port = process.env.PORT || 3000; //server runing port
 
-const startServer = async () => {
-  try {
-    await connectDB();
-    app.listen(port, "0.0.0.0", () => {
-      console.log(`server is runing on port ${port}`);
-    });
-  } catch (error) {
-    console.log("server failed to start", error.message);
-  }
-};
+await connectDB();
 
-startServer();
+export default app;

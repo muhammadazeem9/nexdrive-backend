@@ -13,14 +13,9 @@ const app = express(); // Creates an Express application
 app.use(express.json()); // Middleware to parse incoming JSON data
 app.use(CookieParser());
 
-// check live server si runing or not
-app.use("/", (req, res) => {
-  res.send("nexdrive serveris runimg");
-});
-
-app.use((req, res, next) => {
-  console.log("request received"); // Logs a message whenever a request is received
-  next(); // Passes the request to the next middleware or route
+// health check live server is runing or not
+app.get("/", (req, res) => {
+  res.send("nexdrive server is runing");
 });
 
 // ==================================routes==========
