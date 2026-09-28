@@ -12,8 +12,8 @@ const app = express(); // Creates an Express application
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://nex-drive-react-app-git-dev-nexdrive-m-azeem.vercel.app",
-];
+  process.env.FRONTEND_URL,
+].filter(Boolean);
 
 app.use(
   cors({
